@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Siswa;
 use App\Models\Wali;
 use Illuminate\Http\Request;
 
@@ -22,26 +23,14 @@ class WaliController extends Controller
         return view('wali.index', ['wali' => $wali]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
         $siswa = Siswa::all();
         return view('wali.create', compact('siswa'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
-        // validasi
         $validated = $request->validate([
             'nama' => 'required',
             'id_siswa' => 'required|unique:walis',
@@ -62,24 +51,12 @@ class WaliController extends Controller
             ->with('success', 'Data berhasil dibuat!');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Wali  $wali
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         $wali = Wali::findOrFail($id);
         return view('wali.show', compact('wali'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Wali  $wali
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         $wali = Wali::findOrFail($id);
@@ -87,13 +64,6 @@ class WaliController extends Controller
         return view('wali.edit', compact('wali', 'siswa'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Wali  $wali
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
@@ -117,12 +87,6 @@ class WaliController extends Controller
             ->with('success', 'Data berhasil dibuat!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Wali  $wali
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         $wali = Wali::findOrFail($id);
@@ -130,5 +94,6 @@ class WaliController extends Controller
         $wali->delete();
         return redirect()->route('wali.index')
             ->with('success', 'Data berhasil dibuat!');
+
     }
 }
