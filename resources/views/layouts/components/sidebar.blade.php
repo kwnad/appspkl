@@ -36,7 +36,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{route('siswa.index')}}" class="nav-link active">
+              <a href="{{route('siswa.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Siswa</p>
               </a>
@@ -51,6 +51,12 @@
               <a href="{{route('jurusan.index')}}" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Data Jurusan</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('jurusan.index')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Data Wali</p>
               </a>
             </li>
           </ul>
