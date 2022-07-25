@@ -47,7 +47,7 @@
                                     @foreach ($siswa as $data)
                                         <option value="{{ $data->id }}"
                                             {{ $data->id == $wali->id_siswa ? 'selected' : '' }}>
-                                            {{ $data->nama }}
+                                            {{ $data->nama_siswa }}
                                         </option>
                                     @endforeach
                                 </select>

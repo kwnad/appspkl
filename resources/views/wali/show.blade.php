@@ -24,7 +24,7 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Nama Siswa</label>
-                            <input type="text" class="form-control" name="nama" value="{{ $wali->siswa->nama }}"
+                            <input type="text" class="form-control" name="nama" value="{{ $wali->siswa->nama_siswa }}"
                                 readonly>
 
                         </div>
